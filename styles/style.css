@@ -6,6 +6,13 @@ Green: #00B172
 White: #FFF
 
 */
+
+:root {
+  --main-color: #1a1a1a;
+  --addition-color: #00b172;
+  --white: #fff;
+}
+
 * {
   padding: 0;
   box-sizing: border-box;
@@ -31,8 +38,9 @@ p,
 ol,
 ul {
   padding: 0;
+  margin: 0;
   font-weight: lighter;
-  color: #1a1a1a;
+  color: var(--main-color);
   font-family: sans-serif;
 }
 
@@ -79,11 +87,11 @@ h3 {
 .navBar__item {
   text-decoration: none;
   font-size: 1.2rem;
-  color: #1a1a1a;
+  color: var(--main-color);
 }
 
 .navBar__item:hover {
-  color: #00b172;
+  color: var(--addition-color);
 }
 
 .spotify-logo img {
@@ -127,7 +135,7 @@ h3 {
 
 .header {
   width: fit-content;
-  border-bottom: solid #00b172;
+  border-bottom: solid var(--addition-color);
   padding: 0;
   margin-bottom: 50px;
 }
@@ -151,7 +159,7 @@ h3 {
 }
 
 .spotifyInfo__item h3 {
-  color: #00b172;
+  color: var(--addition-color);
   font-size: 1.7rem;
 }
 
@@ -164,23 +172,27 @@ h3 {
 
 /* Application section */
 .application {
-  background-color: #00b172;
-  padding: 80px;
+  background-color: var(--addition-color);
+  padding: 3rem;
+  color: #fff;
   position: relative;
 }
 
 .application__header {
-  color: #fff;
   letter-spacing: 2px;
   font-weight: lighter;
   width: fit-content;
-  border-bottom: solid #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
 }
 
 .application__container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  /* > * {
+    flex: 1;
+  } */
 }
 
 .application__logo img {
@@ -189,30 +201,39 @@ h3 {
 
 .application__logo {
   position: absolute;
-  top: 45%;
-  right: 40%;
+  top: 50%;
+  right: 50%;
+  translate: -50% -50%;
 }
 
-.application__image img {
+.application__image {
   width: 9.5vw;
+
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
-.application__item h3 {
-  text-align: left;
-  color: #fff;
-}
-
-.application__item p {
-  color: #fff;
-  font-size: 1.5rem;
-  letter-spacing: 0.5px;
-  font-weight: 100;
-  line-height: 2.5rem;
+.application__item {
+  & h3 {
+    text-align: left;
+    margin-bottom: 50px;
+  }
+  & p {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    font-weight: 100;
+    line-height: 2.5rem;
+    color: #fff;
+  }
 }
 
 .application__items {
   display: flex;
   flex-direction: column;
-  gap: 35px;
-  flex: 0 0 10vw;
+  gap: 4vh;
+  flex: 0 0 12vw;
 }
